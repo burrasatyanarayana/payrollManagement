@@ -1,0 +1,47 @@
+.home-bg {
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  background-image: url("/public/koral\ logo.jpg"),
+    url("/public/koral\ logo.jpg"), url("/public/koral\ logo.jpg"),
+    url("/public/koral\ logo.jpg");
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  background-position: 0 0, 150px 150px, 300px 0, 0 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: brightness(0.9);
+  opacity: 0.95;
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.96);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #aaa;
+  width: 400px;
+  z-index: 1;
+}
+
+.company-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.login-form button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

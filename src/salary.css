@@ -1,0 +1,70 @@
+/* src/Salary.css */
+
+.salary-container {
+  padding: 30px;
+  max-width: 500px;
+  margin: auto;
+  background-color: #f3f4f6;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.salary-container h2 {
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.salary-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.salary-form input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.2s;
+}
+
+.salary-form input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+.salary-form button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.salary-form button:hover {
+  background-color: #059669;
+}
+
+.salary-result {
+  margin-top: 30px;
+  background-color: #e0f2fe;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.salary-result h3 {
+  margin-bottom: 10px;
+  color: #0c4a6e;
+}
+
+.salary-result p {
+  margin: 6px 0;
+  font-size: 16px;
+}
