@@ -124,11 +124,7 @@ h1 {
   font-size: 15px;
   border: 1px solid #3207f3;
   border-radius: 6px;
-<<<<<<< HEAD
-  background-color: #3207f3;
-=======
   background-color: #28a745;
->>>>>>> 9e32ad0ee11e72f6440a36ca9a55e6d41a406900
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
@@ -144,93 +140,9 @@ h1 {
   font-size: 1rem;
 }
 
-<<<<<<< HEAD
-/* ================= DASHBOARD LAYOUT ================= */
-
-.dashboard {
-  display: flex;
-  height: 100vh;
-  background-color: #f4f6f8;
-}
-
-.sidebar {
-  width: 220px;
-  background-color: #2c3e50;
-  color: white;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.sidebar button {
-  padding: 12px;
-  background-color: #34495e;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 16px;
-  text-align: left;
-}
-
-.sidebar button:hover {
-  background-color: #1abc9c;
-}
-
-.main-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-}
-
-.topbar {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  background-color: #ecf0f1;
-  border-bottom: 1px solid #ccc;
-  justify-content: flex-end;
-}
-
-.profile-container {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 40px;
-  right: 0;
-  background: white;
-  border: 1px solid #ccc;
-  padding: 10px;
-  z-index: 10;
-  border-radius: 5px;
-}
-
-.content-area {
-  flex-grow: 1;
-  padding: 30px;
-  background-color: white;
-  overflow-y: auto;
-}
-
-/* Optional: Responsive Adjustments */
-@media (max-width: 768px) {
-  .dashboard {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    flex-direction: row;
-    justify-content: space-around;
-=======
 /* Responsive */
 @media (max-width: 600px) {
   .modal {
->>>>>>> 9e32ad0ee11e72f6440a36ca9a55e6d41a406900
     width: 100%;
   }
 
