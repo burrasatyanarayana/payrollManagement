@@ -25,8 +25,10 @@ function Sidebar({ setActivePage }) {
       <button onClick={() => setActivePage("employee")}>
         Employee Details
       </button>
-      <button onClick={() => setActivePage("salary")}>Salary</button>
-      <button onClick={() => setActivePage("leave")}>Leave</button>
+      <button onClick={() => setActivePage("salary")}>
+        Salary Calculation
+      </button>
+      <button onClick={() => setActivePage("leave")}>Leave Management</button>
     </div>
   );
 }
