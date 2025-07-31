@@ -1,0 +1,117 @@
+/* leavehistory.css */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+}
+
+.leave-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+  border-radius: 12px;
+}
+
+.leave-container h2 {
+  text-align: center;
+  color: #007acc;
+  margin-bottom: 25px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #b3d9ff;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 16px;
+  outline-color: #007acc;
+}
+
+.leave-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.leave-table th,
+.leave-table td {
+  border: 1px solid #cce5ff;
+  padding: 12px;
+  text-align: center;
+}
+
+.leave-table th {
+  background-color: #007acc;
+  color: white;
+  font-weight: 600;
+}
+
+.leave-table tr:nth-child(even) {
+  background-color: #f0faff;
+}
+
+.leave-table tr:hover {
+  background-color: #e6f7ff;
+}
+
+p {
+  font-size: 16px;
+  color: #005b99;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.add-leave-form {
+  margin-top: 30px;
+  border-top: 1px solid #cce5ff;
+  padding-top: 20px;
+}
+
+.add-leave-form h3 {
+  margin-bottom: 20px;
+  color: #007acc;
+}
+
+.add-leave-form input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #cce5ff;
+  outline-color: #007acc;
+}
+
+.add-leave-form button {
+  padding: 12px 25px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-leave-form button:hover:not(:disabled) {
+  background-color: #005b99;
+}
+
+.add-leave-form button:disabled {
+  background-color: #cce5ff;
+  cursor: not-allowed;
+}
+
+.add-leave-form p {
+  margin-top: 10px;
+  color: #d32f2f;
+  font-weight: bold;
+}
