@@ -165,16 +165,12 @@ const App = () => {
     },
   ]);
 
-  // Input for search bar
   const [searchId, setSearchId] = useState("");
 
-  // For editing employee
   const [editEmployee, setEditEmployee] = useState(null);
 
-  // For new employee modal visibility
   const [newEmployeeModal, setNewEmployeeModal] = useState(false);
 
-  // For storing new employee input
   const [newEmployee, setNewEmployee] = useState({
     id: "",
     name: "",
@@ -183,12 +179,10 @@ const App = () => {
     joiningYear: "",
   });
 
-  // Handle changes in edit form fields
   const handleEditChange = (field, value) => {
     setEditEmployee({ ...editEmployee, [field]: value });
   };
 
-  // Save edited employee details
   const saveEdit = () => {
     const updatedList = employees.map((emp) =>
       emp.id === editEmployee.id ? editEmployee : emp
@@ -197,7 +191,6 @@ const App = () => {
     setEditEmployee(null); // close modal
   };
 
-  // Handle adding a new employee
   const handleAddEmployee = () => {
     if (
       !newEmployee.id ||
@@ -210,7 +203,6 @@ const App = () => {
       return;
     }
 
-    // Check if employee ID already exists
     const alreadyExists = employees.find(
       (emp) => emp.id === Number(newEmployee.id)
     );
@@ -219,7 +211,6 @@ const App = () => {
       return;
     }
 
-    // Add new employee to list
     const updatedList = [
       ...employees,
       {
@@ -241,7 +232,6 @@ const App = () => {
     });
   };
 
-  // Filter employees by ID
   const filteredEmployees = employees.filter((emp) =>
     emp.id.toString().includes(searchId)
   );

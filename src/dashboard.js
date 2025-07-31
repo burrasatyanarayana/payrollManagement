@@ -1,28 +1,32 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import Salary from "./salary";
+import Employee from "./employee";
+//import Leave from "./Leave";
 import "./dashboard.css";
 
 export default function Dashboard() {
+  const [activePage, setActivePage] = useState("employee");
+
   return (
     <div className="dashboard">
-      <Sidebar />
+      <Sidebar setActivePage={setActivePage} />
       <div className="main-content">
         <Topbar />
-        <Content />
+        <Content activePage={activePage} />
       </div>
     </div>
   );
 }
 
-function Sidebar() {
-  const navigate = useNavigate();
-
+function Sidebar({ setActivePage }) {
   return (
     <div className="sidebar">
-      <button onClick={() => navigate("/employee")}>Employee Details</button>
-      <button onClick={() => navigate("/salary")}>Salary</button>
-      <button onClick={() => navigate("/leave")}>Leave</button>
+      <button onClick={() => setActivePage("employee")}>
+        Employee Details
+      </button>
+      <button onClick={() => setActivePage("salary")}>Salary</button>
+      <button onClick={() => setActivePage("leave")}>Leave</button>
     </div>
   );
 }
@@ -33,10 +37,7 @@ function Topbar() {
 
   return (
     <div className="topbar">
-      <div
-        className="profile-container"
-        style={{ marginLeft: "auto", marginRight: "20px" }}
-      >
+      <div className="profile-container">
         <FaUserCircle
           size={28}
           onClick={() => setShowMenu(!showMenu)}
@@ -53,11 +54,12 @@ function Topbar() {
   );
 }
 
-function Content() {
+function Content({ activePage }) {
   return (
     <div className="content-area">
-      <h2>Welcome to Payroll Management System</h2>
-      <p>Select a section from the sidebar to continue.</p>
+      {activePage === "employee" && <Employee />}
+      {activePage === "salary" && <Salary />}
+      {/*{activePage === "leave" && <Leave />}*/}
     </div>
   );
 }
