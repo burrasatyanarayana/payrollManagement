@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import Salary from "./salary";
 import Employee from "./employee";
-//import Leave from "./Leave";
+// import Leave from "./leave"; // Uncomment when ready
 import "./dashboard.css";
 
 export default function Dashboard() {
@@ -37,6 +37,9 @@ function Topbar() {
 
   return (
     <div className="topbar">
+      <div className="center-heading">
+        <h1>PayRollManagement</h1>
+      </div>
       <div className="profile-container">
         <FaUserCircle
           size={28}
@@ -59,7 +62,7 @@ function Content({ activePage }) {
     <div className="content-area">
       {activePage === "employee" && <Employee />}
       {activePage === "salary" && <Salary />}
-      {/*{activePage === "leave" && <Leave />}*/}
+      {/* {activePage === "leave" && <Leave />} */}
     </div>
   );
 }

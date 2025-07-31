@@ -167,16 +167,8 @@ const App = () => {
   ]);
 
   const [searchId, setSearchId] = useState("");
-<<<<<<< HEAD
-
-  const [editEmployee, setEditEmployee] = useState(null);
-
-  const [newEmployeeModal, setNewEmployeeModal] = useState(false);
-
-=======
   const [editEmployee, setEditEmployee] = useState(null);
   const [newEmployeeModal, setNewEmployeeModal] = useState(false);
->>>>>>> 9e32ad0ee11e72f6440a36ca9a55e6d41a406900
   const [newEmployee, setNewEmployee] = useState({
     id: "",
     name: "",
