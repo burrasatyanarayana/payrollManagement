@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaEdit, FaTrash } from "react-icons/fa";
 import "./employee.css";
 
 const App = () => {
@@ -165,52 +166,53 @@ const App = () => {
     },
   ]);
 
-  // Input for search bar
   const [searchId, setSearchId] = useState("");
-
-  // For editing employee
   const [editEmployee, setEditEmployee] = useState(null);
-
-  // For new employee modal visibility
   const [newEmployeeModal, setNewEmployeeModal] = useState(false);
-
-  // For storing new employee input
   const [newEmployee, setNewEmployee] = useState({
     id: "",
     name: "",
     email: "",
+    role: "",
     salary: "",
     joiningYear: "",
   });
 
-  // Handle changes in edit form fields
   const handleEditChange = (field, value) => {
     setEditEmployee({ ...editEmployee, [field]: value });
   };
 
-  // Save edited employee details
   const saveEdit = () => {
     const updatedList = employees.map((emp) =>
       emp.id === editEmployee.id ? editEmployee : emp
     );
     setEmployees(updatedList);
-    setEditEmployee(null); // close modal
+    setEditEmployee(null);
   };
 
-  // Handle adding a new employee
+  const deleteEmployee = (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this employee?"
+    );
+    if (confirmDelete) {
+      const updatedList = employees.filter((emp) => emp.id !== id);
+      setEmployees(updatedList);
+    }
+  };
+
   const handleAddEmployee = () => {
     if (
       !newEmployee.id ||
       !newEmployee.name ||
       !newEmployee.email ||
       !newEmployee.salary ||
-      !newEmployee.joiningYear
+      !newEmployee.joiningYear ||
+      !newEmployee.role
     ) {
       alert("Please fill all the fields.");
       return;
     }
 
-    // Check if employee ID already exists
     const alreadyExists = employees.find(
       (emp) => emp.id === Number(newEmployee.id)
     );
@@ -219,7 +221,6 @@ const App = () => {
       return;
     }
 
-    // Add new employee to list
     const updatedList = [
       ...employees,
       {
@@ -236,20 +237,20 @@ const App = () => {
       id: "",
       name: "",
       email: "",
+      role: "",
       salary: "",
       joiningYear: "",
     });
   };
 
-  // Filter employees by ID
   const filteredEmployees = employees.filter((emp) =>
     emp.id.toString().includes(searchId)
   );
+
   return (
     <div className="App">
       <h1>Employee Data</h1>
 
-      {/* Top Bar */}
       <div className="top-bar">
         <input
           type="text"
@@ -267,7 +268,6 @@ const App = () => {
         </button>
       </div>
 
-      {/* Employee Table */}
       <table className="employee-table">
         <thead>
           <tr>
@@ -291,13 +291,20 @@ const App = () => {
               <td>{emp.salary}</td>
               <td>{emp.joiningYear}</td>
               <td>
-                {/* Edit Button with Tooltip */}
                 <button
                   className="dots-button"
                   title="Edit"
                   onClick={() => setEditEmployee(emp)}
                 >
-                  ⋮
+                  <FaEdit />
+                </button>
+                <button
+                  className="dots-button delete"
+                  title="Delete"
+                  onClick={() => deleteEmployee(emp.id)}
+                  style={{ marginLeft: "8px", color: "red" }}
+                >
+                  <FaTrash />
                 </button>
               </td>
             </tr>
@@ -305,7 +312,7 @@ const App = () => {
         </tbody>
       </table>
 
-      {/* Edit Employee Modal */}
+      {/* Edit Modal */}
       {editEmployee && (
         <div className="modal-overlay">
           <div className="modal">
@@ -322,6 +329,12 @@ const App = () => {
               value={editEmployee.email}
               onChange={(e) => handleEditChange("email", e.target.value)}
               placeholder="Email"
+            />
+            <input
+              type="text"
+              value={editEmployee.role}
+              onChange={(e) => handleEditChange("role", e.target.value)}
+              placeholder="Role"
             />
             <input
               type="number"
@@ -373,6 +386,14 @@ const App = () => {
                 setNewEmployee({ ...newEmployee, email: e.target.value })
               }
               placeholder="Email"
+            />
+            <input
+              type="text"
+              value={newEmployee.role}
+              onChange={(e) =>
+                setNewEmployee({ ...newEmployee, role: e.target.value })
+              }
+              placeholder="Role"
             />
             <input
               type="number"
