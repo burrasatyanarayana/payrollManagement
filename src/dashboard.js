@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import Salary from "./salary";
-import Employee from "./employee";
+import Emp from "./employee";
 // import Leave from "./leave"; // Uncomment when ready
 import "./dashboard.css";
 import LeaveHistory from "./leaveHistory";
@@ -61,7 +61,7 @@ function Topbar() {
 function Content({ activePage }) {
   return (
     <div className="content-area">
-      {activePage === "employee" && <Employee />}
+      {activePage === "employee" && <Emp />}
       {activePage === "salary" && <Salary />}
       {activePage === "leave" && <LeaveHistory />}
     </div>

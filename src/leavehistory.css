@@ -20,7 +20,7 @@ html {
 
 .leave-container h2 {
   text-align: center;
-  color: #007acc;
+  color: black;
   margin-bottom: 25px;
 }
 
@@ -76,7 +76,7 @@ p {
 
 .add-leave-form h3 {
   margin-bottom: 20px;
-  color: #007acc;
+  color: black;
 }
 
 .add-leave-form input {
