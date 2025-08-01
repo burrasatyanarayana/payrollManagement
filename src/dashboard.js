@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
 import Salary from "./salary";
 import Employee from "./employee";
-// import Leave from "./leave"; // Uncomment when ready
 import "./dashboard.css";
+import LeaveHistory from "./leaveHistory";
 
 export default function Dashboard() {
   const [activePage, setActivePage] = useState("employee");
@@ -64,7 +64,7 @@ function Content({ activePage }) {
     <div className="content-area">
       {activePage === "employee" && <Employee />}
       {activePage === "salary" && <Salary />}
-      {/* {activePage === "leave" && <Leave />} */}
+      {activePage === "leave" && <LeaveHistory />}
     </div>
   );
 }

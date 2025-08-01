@@ -23,17 +23,19 @@ h1 {
 }
 
 .add-button {
-  background-color: #28a745;
+  background-color: #007bff;
   color: rgb(232, 226, 226);
   border: none;
-  padding: 10px 16px;
-  border-radius: 4px;
+  width: 200px;
+  height: 45px;
+  padding: 5px 10px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
 }
 
 .add-button:hover {
-  background-color: #218838;
+  background-color: #0056b3;
 }
 
 .employee-table {
@@ -124,13 +126,13 @@ h1 {
   font-size: 15px;
   border: 1px solid #3207f3;
   border-radius: 6px;
-  background-color: #28a745;
+  background-color: #007bff;
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
 
 .modal-buttons button:hover {
-  background-color: #218838;
+  background-color: #0056b3;
 }
 .dots-button.delete {
   background-color: transparent;

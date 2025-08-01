@@ -1,0 +1,26 @@
+const leaveRequests = [
+  { empId: 1, date: "2025-07-28", reason: "Sick Leave", days: 1 },
+  { empId: 1, date: "2025-07-10", reason: "Personal Work", days: 2 },
+  { empId: 2, date: "2025-07-20", reason: "Vacation", days: 3 },
+  { empId: 3, date: "2025-07-25", reason: "Family Function", days: 1 },
+  { empId: 4, date: "2025-07-21", reason: "Medical", days: 2 },
+  { empId: 5, date: "2025-07-15", reason: "Festival", days: 1 },
+  { empId: 5, date: "2025-07-29", reason: "Emergency", days: 1 },
+  { empId: 6, date: "2025-07-05", reason: "Out of Station", days: 3 },
+  { empId: 7, date: "2025-07-12", reason: "Personal Leave", days: 2 },
+  { empId: 8, date: "2025-07-18", reason: "Medical Checkup", days: 1 },
+  { empId: 9, date: "2025-07-22", reason: "Festival", days: 2 },
+  { empId: 10, date: "2025-07-26", reason: "Sick Leave", days: 1 },
+  { empId: 11, date: "2025-07-11", reason: "Travel", days: 2 },
+  { empId: 12, date: "2025-07-23", reason: "Function", days: 1 },
+  { empId: 13, date: "2025-07-17", reason: "Doctor Visit", days: 1 },
+  { empId: 14, date: "2025-07-13", reason: "Marriage", days: 3 },
+  { empId: 15, date: "2025-07-24", reason: "Vacation", days: 2 },
+  { empId: 16, date: "2025-07-19", reason: "Medical", days: 1 },
+  { empId: 17, date: "2025-07-14", reason: "Personal", days: 2 },
+  { empId: 18, date: "2025-07-16", reason: "Travel", days: 1 },
+  { empId: 19, date: "2025-07-09", reason: "Sick Leave", days: 1 },
+  { empId: 20, date: "2025-07-08", reason: "Religious", days: 1 },
+];
+
+export default leaveRequests;
