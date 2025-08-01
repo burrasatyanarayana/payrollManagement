@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import leaveRequestsData from "./leavedata";
 import "./leavehistory.css";
 
@@ -7,15 +7,11 @@ const MAX_LEAVES = 20;
 const LeaveHistory = () => {
   const [searchId, setSearchId] = useState("");
   const [leaveRequests, setLeaveRequests] = useState(leaveRequestsData);
-  const [filteredLeaves, setFilteredLeaves] = useState([]);
   const [newLeave, setNewLeave] = useState({ date: "", reason: "", days: "" });
 
-  useEffect(() => {
-    const result = leaveRequests.filter(
-      (leave) => leave.empId.toString() === searchId
-    );
-    setFilteredLeaves(result);
-  }, [searchId, leaveRequests]);
+  const filteredLeaves = leaveRequests.filter(
+    (leave) => leave.empId.toString() === searchId
+  );
 
   const totalLeaves = filteredLeaves.reduce(
     (total, leave) => total + leave.days,
@@ -51,8 +47,7 @@ const LeaveHistory = () => {
   };
 
   const willExceedLimit =
-    parseInt(newLeave.days) + totalLeaves > MAX_LEAVES ||
-    totalLeaves >= MAX_LEAVES;
+    parseInt(newLeave.days || 0) + totalLeaves > MAX_LEAVES;
 
   return (
     <div className="leave-container">

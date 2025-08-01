@@ -38,13 +38,13 @@ const Emp = () => {
     setEditEmployee(null);
   };
 
-  // ❌ Delete
+  // for Deleting
   const deleteEmployee = (id) => {
     const updatedList = employees.filter((emp) => emp.id !== id);
     setEmployees(updatedList);
   };
 
-  // ➕ Add new employee
+  // to add a new employee
   const handleAddEmployee = () => {
     if (
       !newEmployee.id ||
@@ -88,7 +88,7 @@ const Emp = () => {
     });
   };
 
-  // 🔍 Filter
+  // filtering data
   const filteredEmployees = employees.filter((emp) =>
     emp.id.toString().includes(searchId)
   );
@@ -133,11 +133,11 @@ const Emp = () => {
                 <button
                   className="dots-button"
                   title="Edit"
-                  onClick={() => setEditEmployee(emp)}
+                  onClick={() => setEditEmployee(emp)} // editing employee
                 >
                   <FaEdit />
                 </button>
-                <DeleteEmployeeButton
+                <DeleteEmployeeButton //deleting emp component
                   empId={emp.id}
                   onDelete={deleteEmployee}
                 />
@@ -147,7 +147,7 @@ const Emp = () => {
         </tbody>
       </table>
 
-      {/* Edit Modal */}
+      {/* emp editing */}
       {editEmployee && (
         <EditEmployeeModal
           editEmployee={editEmployee}
@@ -157,7 +157,7 @@ const Emp = () => {
         />
       )}
 
-      {/* New Employee Modal */}
+      {/* New Employee adding */}
       {newEmployeeModal && (
         <AddEmployeeModal
           newEmployee={newEmployee}
